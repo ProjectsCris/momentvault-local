@@ -32,18 +32,19 @@
       <p>OAuth credentials and tokens are stored locally using Windows account-bound DPAPI protection. The application does not request or store the Google account password.</p>
       <p>The local queue, editing recipes, publication references, counts, reports and controller state are stored on disk with a managed backup. Those history files are not encrypted by the application. Source media, transcripts, frames and rendered videos also remain on the PC.</p>
       <p>The local engine listens on the PC’s loopback address. It uses a local HttpOnly session cookie and protections against requests from other origins. Other software with access to the same Windows account may access local files. External backups are controlled by the owner.</p>
-      <p>Transcription, visual analysis and model processing run locally. The application does not send media or reports to an online inference service.</p>
+      <p>Transcription, caption alignment and rendering run on the PC. Editorial decisions and visual review use Codex through the owner’s existing ChatGPT sign-in and require internet. Selected transcript passages, sampled frames, editing context and public research metadata are sent to OpenAI for those tasks. Google OAuth tokens, passwords and campaign session credentials are not included in those requests.</p>
     </section>
 
     <section aria-labelledby="sharing"><h2 id="sharing">3. Destinations and sharing</h2>
       <p>Authorization, uploads, searches and statistics requests use Google and YouTube services over the internet. When an authorized campaign submission is enabled, the application sends the public video URL to that campaign platform. Campaign authentication uses a separate local browser profile.</p>
+      <p>Codex requests are processed by OpenAI under the account’s service terms, privacy settings and <a href="https://openai.com/policies/privacy-policy/">Privacy Policy</a>. This installation does not claim zero provider retention. Use of private YouTube analytics in an online analysis task remains disabled until its permitted basis and required data controls are documented; connecting YouTube alone does not enable it.</p>
       <p>The application does not sell Google user data, add third-party advertising to the local interface, or embed a YouTube player there. Its use of Google user data is limited to the practices disclosed in this policy and the applicable <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
     </section>
 
     <section aria-labelledby="retention"><h2 id="retention">4. Retention and deletion</h2>
       <p>Public research results may be reused from cache for up to six hours. Stored API research data is removed from the managed state and backup after 30 days, or through the deletion and disconnection controls.</p>
       <p>While the engine is running, including during a production pause, it attempts to reconfirm channel access daily and video availability/access every 29 days. A transient access failure pauses production and is retried within an hour. Detected revocation, or 30 days without confirmation, triggers local deletion of the managed YouTube data. If the PC is off, maintenance resumes when the engine runs again.</p>
-      <p>Missing access or a missed measurement window is not treated as zero views. The application does not claim to delete backups made outside its control.</p>
+      <p>Missing access or a missed measurement window is not treated as zero views. The application does not claim to delete backups made outside its control, or data retained by external service providers. Local deletion controls do not delete OpenAI account data; manage that separately in the provider’s account controls.</p>
     </section>
 
     <section aria-labelledby="controls"><h2 id="controls">5. Your controls</h2>
@@ -61,6 +62,6 @@
       <p>Do not send passwords, tokens or OAuth client files through a public channel. Changes to purposes or permissions require information and authorization before use.</p>
     </section>
   </main>
-  <footer class="wrap footer"><a href="./">MomentVault Local</a><span>Base notice: 31 October 2026 · Research addition: 1 November 2026</span></footer>
+  <footer class="wrap footer"><a href="./">MomentVault Local</a><span>Base notice: 31 October 2026 · Research and Codex processing update: 1 November 2026</span></footer>
 </body>
 </html>
